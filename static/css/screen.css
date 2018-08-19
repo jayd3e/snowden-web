@@ -517,9 +517,18 @@ select:disabled {
   font-size: 1.5rem;
   outline: none; }
 
+html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  padding-bottom: 45px; }
+
 .page {
   background-color: #FFF;
-  height: 100%;
   position: absolute;
   width: 100%; }
 
@@ -551,12 +560,15 @@ select:disabled {
       padding-left: 80px; }
       .conversations .conversations-list li .conversation-content h3 {
         margin-bottom: 5px; }
+      .conversations .conversations-list li .conversation-content p {
+        color: #888; }
     .conversations .conversations-list li:hover {
       background-color: #EEE;
       cursor: pointer; }
 
 .messages {
-  display: none; }
+  display: none;
+  position: relative; }
   .messages .messages-header {
     border-bottom: 1px solid #DDD;
     padding: 25px; }
@@ -593,6 +605,7 @@ select:disabled {
         margin-top: 30px; }
   .messages .messages-list {
     list-style-type: none;
+    margin-bottom: 75px;
     width: 100%; }
     .messages .messages-list li {
       padding: 15px 15px 0 15px; }

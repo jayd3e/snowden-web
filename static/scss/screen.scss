@@ -26,9 +26,20 @@ $disabled_blue: #7B95B0;
 @import "button";
 @import "input";
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  padding-bottom: 45px;
+}
+
 .page {
   background-color: #FFF;
-	height: 100%;
   position: absolute;
 	width: 100%;
 }
@@ -85,7 +96,7 @@ $disabled_blue: #7B95B0;
         }
 
         p {
-
+          color: #888;
         }
       }
 
@@ -99,6 +110,7 @@ $disabled_blue: #7B95B0;
 
 .messages {
 	display: none;
+  position: relative;
 
   .messages-header {
     border-bottom: 1px solid #DDD;
@@ -163,6 +175,7 @@ $disabled_blue: #7B95B0;
 
   .messages-list {
     list-style-type: none;
+    margin-bottom: 75px;
     width: 100%;
 
     li {

@@ -66,8 +66,8 @@
 			<ol class="messages-list js-messages-list"></ol>
 
 			<div class="messages-content">
-				<input type="text" name="message_content" />
-				<i class="fas fa-paper-plane messages-send"></i>
+				<input class="js-messages-content-input" type="text" name="message_content" />
+				<i class="fas fa-paper-plane messages-send js-submit"></i>
 			</div>
 		</section>
 
@@ -154,10 +154,10 @@
 
 	<script id="conversation-template" type="text/x-mustache-template">
 		<li>
-			<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
+			<div class="conversation-profile-pic avatar"><img src="<%= profile_pic_url %>" /></div>
 			<div class="conversation-content">
-				<h3>Government Secrets</h3>
-				<p>This is the last message in the thread.</p>
+				<h3><%= name %></h3>
+				<p>Created on: <%= created %></p>
 			</div>
 		</li>
 	</script>
@@ -175,5 +175,6 @@
 	<script src="/js/libs/tether.js"></script>
 	<script src="/js/libs/drop.js"></script>
 	<script src="/js/libs/vex.js"></script>
+	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.5.min.js"></script>
 	<script src="/js/main.js?version=1"></script>
 </html>
