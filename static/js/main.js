@@ -81,7 +81,30 @@ $(function () {
 			this.submitEl.click(this.submit);
 		},
 		submit: function() {
+			var template = _.template(this.messageTemplateEl.html());
 
+			this.messagesListEl.append(template({
+				"content": this.messagesContentInputEl.val(),
+				"orientation": "right"
+			}))
+			this.messagesContentInputEl.val("");
+
+			var messageEl = this.messagesListEl.first();
+			var messageMenuIconEl = messageEl.find('.js-message-menu-icon');
+			var messageMenuEl = messageEl.find('.js-message-menu');
+			var dropEl = Drop({
+			  target: messageMenuIconEl[0],
+			  content: "<ol class=\"message-menu menu js-message-menu\"><li><a href=\"#\">Report</a></li></ol>",
+			  position: 'top center',
+			  openOn: 'click'
+			});
+
+			_.delay(_.bind(function() {
+				this.messagesListEl.append(template({
+					"content": "Wow! Wait till the public hears about this!",
+					"orientation": "left"
+				}));
+			}, this), 1000);
 		},
 		back: function() {
 			router.navigate("#conversations", {trigger: true});

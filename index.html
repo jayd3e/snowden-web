@@ -266,9 +266,9 @@
 	</script>
 
 	<script id="message-template" type="text/x-mustache-template">
-		<li class="message message-right">
+		<li class="message message-<%= orientation %>">
 			<div class="message-content"><%= content %></div>
-			<i class="fas fa-ellipsis-h"></i>
+			<i class="fas fa-ellipsis-h js-message-menu-icon"></i>
 		</li>
 	</script>
 

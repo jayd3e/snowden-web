@@ -1,0 +1,58 @@
+/*
+* Partial: menu
+*/
+
+.menu {
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px 0px darken($bg_grey, 15%);
+
+  background-color: $white;
+  list-style-type: none;
+  min-width: 125px;
+
+  li {
+    display: block;
+
+    &.brokerage-header-price a {
+      color: $dark_grey;
+      font-weight: 600;
+      text-align: center;
+
+      &:hover {
+        color: $dark_grey;
+        font-weight: 600;
+      }
+    }
+
+    .icon-qrcode {
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    &.on-mobile {
+      display: none;
+    }
+
+    a {
+      border-bottom: 1px solid $border_grey;
+      display: block;
+      font-size: 1.5rem;
+      padding: 10px 15px;
+
+      &:hover {
+        background: $bg_grey;
+        color: darken($accent, 5%);
+        text-decoration: none;
+      }
+    }
+
+    &:first-child a {
+      border-radius: 3px 3px 0 0;
+    }
+
+    &:last-child a {
+      border-radius: 0 0 3px 3px;
+      border-bottom: 0;
+    }
+  }
+}
