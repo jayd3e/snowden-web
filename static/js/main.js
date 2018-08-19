@@ -215,6 +215,15 @@ $(function () {
 			});
 		},
 		submitSuccess: function() {
+			SnowdenApp.proposeConversationAgreement(
+				"0x00Fb52101bbcF2e88a66fDf35d08A9f235e5D4Ca",
+				web3.toBigNumber(2000000000000000000),
+				web3.toBigNumber(2000000000000000000),
+				web3.toBigNumber(1000000000000000000),
+				web3.toBigNumber(3000000000000000000),
+				9420882
+			);
+
 			router.navigate("conversations", {trigger: true});
 
 			this.$el.hide();
