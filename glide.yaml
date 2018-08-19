@@ -1,0 +1,6 @@
+package: github.com/snowden-web
+import:
+- package: github.com/labstack/echo
+  version: ^3.3.4
+  subpackages:
+  - middleware
