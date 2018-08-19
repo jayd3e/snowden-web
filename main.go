@@ -36,7 +36,15 @@ func main() {
 
 	// Route => handler
 	e.GET("/", func(context echo.Context) error {
-		return context.Render(http.StatusOK, "index.html", nil)
+		param := context.Request().URL.Query().Get("show_expose")
+		showExpose := false
+		if param != "" {
+			showExpose = true
+		}
+
+		return context.Render(http.StatusOK, "index.html", map[string]interface{}{
+			"showExpose": showExpose,
+		})
 	})
 
 	// Start server

@@ -12,7 +12,45 @@
 				<i class="fas fa-plus-square js-create-conversation-button"></i>
 			</div>
 
-			<ol class="conversations-list js-conversations-list"></ol>
+			<ol class="conversations-list js-conversations-list">
+				{{ if .showExpose }}
+				<li data-id="0">
+					<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/952866338187423744/0hj7a-EH_400x400.jpg" /></div>
+					<div class="conversation-content">
+						<h3>NSA Expose</h3>
+						<p>Created on: August 20th, 2012</p>
+					</div>
+				</li>
+				{{ end }}
+				<li data-id="1">
+					<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/801927034603794432/H6vCS6tj_400x400.jpg" /></div>
+					<div class="conversation-content">
+						<h3>SHA256 Vulnerability</h3>
+						<p>Created on: August 19th, 2018</p>
+					</div>
+				</li>
+				<li data-id="2">
+					<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/761421350636367872/BwceZAve_400x400.jpg" /></div>
+					<div class="conversation-content">
+						<h3>Intel - Russia's Role in US Election</h3>
+						<p>Created on: September 5th, 2017</p>
+					</div>
+				</li>
+				<li data-id="3">
+					<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/877216729432240129/FixOob6K_400x400.jpg" /></div>
+					<div class="conversation-content">
+						<h3>Lockheed Proprietary Design Specs</h3>
+						<p>Created on: August 20th, 2017</p>
+					</div>
+				</li>
+				<li data-id="4">
+					<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/1027232155158634496/1ymdZs-x_400x400.jpg" /></div>
+					<div class="conversation-content">
+						<h3>Unreleased Defense Budget</h3>
+						<p>Created on: January 20th, 2016</p>
+					</div>
+				</li>
+			</ol>
 		</section>
 
 		<section class="messages js-messages page">
@@ -63,7 +101,12 @@
 				<p class="messages-banner-expiration">Expires on July 2nd, 2019</p>
 			</div>
 			</div>
-			<ol class="messages-list js-messages-list"></ol>
+			<ol class="messages-list js-messages-list">
+				<li class="message message-right">
+					<div class="message-content">Test messages</div>
+					<i class="fas fa-ellipsis-h"></i>
+				</li>
+			</ol>
 
 			<div class="messages-content">
 				<input class="js-messages-content-input" type="text" name="message_content" />
@@ -79,6 +122,8 @@
 			<div class="create-conversation-body">
 				<p>You are creating a conversation.</p>
 				<input class="input js-conversation-name" type="text" placeholder="Name of conversation" />
+				<input class="input js-conversation-username" type="text" placeholder="Username of recipient" />
+				<input class="input js-conversation-amount" type="text" placeholder="Amount" />
 			</div>
 
 			<div class="create-conversation-controls">
@@ -154,7 +199,7 @@
 
 	<script id="conversation-template" type="text/x-mustache-template">
 		<li>
-			<div class="conversation-profile-pic avatar"><img src="<%= profile_pic_url %>" /></div>
+			<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
 			<div class="conversation-content">
 				<h3><%= name %></h3>
 				<p>Created on: <%= created %></p>

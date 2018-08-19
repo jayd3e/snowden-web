@@ -12,38 +12,27 @@ $(function () {
 
 	var ConversationsView = Backbone.View.extend({
 		initialize: function() {
-			_.bindAll(this, "initialLoad", "createConversation");
+			_.bindAll(this, "createConversation");
 
 			/* Elements */
 			this.conversationTemplateEl = $("#conversation-template");
 			this.conversationsListEl = this.$el.find(".js-conversations-list");
+			this.conversationEls = this.conversationsListEl.children('li');
 			this.createConversationButtonEl = this.$el.find(".js-create-conversation-button");
 
-			$.ajax({
-				url: baseUrl + "/index.php?type=conversations",
-				dataType: "json",
-				success: this.initialLoad
-			})
+			_.each(this.conversationEls, function(el) {
+				var model = new ConversationModel({
+					id: $(el).data('id')
+				});
+				var conversationView = new ConversationItemView({
+					el: el,
+					model: model
+				})
+			}, this);
 
 			this.$el.show();
 
 			this.createConversationButtonEl.click(this.createConversation);
-		},
-		initialLoad: function(response) {
-			_.each(response, function(conversation) {
-				this.conversationTemplate = _.template(this.conversationTemplateEl.html());
-
-				var model = new ConversationModel(conversation);
-				var conversationView = new ConversationItemView({
-					el: this.conversationTemplate(model.toJSON()),
-					model: model
-				})
-
-				this.conversationsListEl.append(conversationView.el);
-			}, this);
-
-			/* Elements */
-			this.conversationEls = this.conversationsListEl.children('li');
 		},
 		createConversation: function() {
 			router.navigate("conversation/create", {trigger: true});

@@ -40,7 +40,6 @@ body {
 
 .page {
   background-color: #FFF;
-  position: absolute;
 	width: 100%;
 }
 
@@ -281,6 +280,8 @@ body {
     input {
       max-width: 500px;
       width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
     }
 
     p {
