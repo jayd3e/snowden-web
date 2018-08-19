@@ -1,0 +1,51 @@
+/*
+* Partial: input
+*/
+
+.input {
+  background-color: $white;
+  border: 1px solid $border_grey;
+  border-radius: 4px;
+  color: $dark_grey;
+  min-height: 40px;
+  line-height: 2.0rem;
+  outline: none;
+  padding: 0 10px;
+
+  &:focus, &:focus-within {
+    border: 1px solid transparentize($accent, 0.4);
+  }
+
+  &.errored {
+    border-color: transparentize($accent_red, 0.3);
+
+    input {
+      background: transparentize($accent_red, 0.8);
+      color: darken($accent_red, 20%);
+
+      &::placeholder {
+        color: $accent_red !important;
+      }
+    }
+
+    .brokerage-amount-currency {
+      color: $accent_red !important;
+    }
+  }
+}
+
+.input[disabled="disabled"] {
+  background-color: $bg_grey;
+  color: darken($bg_grey, 40%);
+}
+
+select:disabled {
+  background-color: $bg_grey;
+  color: $disabled_blue;
+}
+
+.input-unstyled {
+  border: none;
+  font-size: 1.5rem;
+  outline: none;
+}

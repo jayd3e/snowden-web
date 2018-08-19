@@ -1,0 +1,78 @@
+/*
+* Partial: button
+*/
+
+.button {
+  @include border-radius(3px);
+  @include transition(background, 0.1s);
+  @include gradient(#FFFFFF, #F8F9FC);
+
+  border: 1px solid #C5C5C5;
+  color: #403E41;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 4rem;
+  line-height: 4rem;
+  margin-top: -4px;
+  min-width: auto;
+  padding: 0 20px;
+
+  &:hover, &.is-dragover {
+    @include gradient(#FAFAFA, #F8F9FC);
+    color: darken($dark_grey, 5%);
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.button[disabled] {
+  background-color: $light_grey;
+  border: 1px solid darken($light_grey, 20%);
+
+  &:hover {
+    background-color: darken($light_grey, 5%);
+    border: 1px solid darken($light_grey, 25%);
+    cursor: not-allowed;
+  }
+}
+
+.button-success, .button-accent {
+  @extend .button;
+  @include transition(background-color, 0.2s);
+
+  background: $accent;
+  border-color: darken($accent, 10%);
+  color: white;
+
+  &:hover, &:focus {
+    background: darken($accent, 5%);
+    border-color: darken($accent, 15%);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: darken($accent, 10%);
+    border-color: darken($accent, 15%);
+  }
+
+  &.red {
+    background: $accent_red;
+    border-color: darken($accent_red, 5%);
+
+    &:hover, &:focus {
+      background: darken($accent_red, 5%);
+    }
+
+    &:active {
+      background-color: darken($accent_red, 10%);
+    }
+  }
+
+  &[disabled], &[disabled]:hover {
+    background-color: lighten($accent, 10%);
+    border-color: lighten($accent, 5%);
+  }
+}

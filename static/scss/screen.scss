@@ -1,8 +1,35 @@
 @import "reset";
 @import "normalize";
 
+/*
+* Vars
+*/
+
+$black: #000;
+$white: #FFF;
+$lighter_grey: #D7D7D7;
+$light_grey: #B1B1B1;
+$border_grey: #E1E4E8;
+$med_grey: #666;
+$dark_grey: #403E41;
+$red: darken(#efbac9, 10%);
+$accent_red: #E98176;
+$accent: #31A3FA;
+$bg_grey: #FAFBFC;
+$disabled_blue: #7B95B0;
+
+/*
+* Imports
+*/
+
+@import "css3";
+@import "button";
+@import "input";
+
 .page {
+  background-color: #FFF;
 	height: 100%;
+  position: absolute;
 	width: 100%;
 }
 
@@ -55,15 +82,127 @@
 }
 
 .messages {
-	display: none;
+	// display: none;
 
   .messages-header {
-    text-align: center;
+    border-bottom: 1px solid #DDD;
+    padding: 25px;
   }
 
   .messages-list {
     list-style-type: none;
+    width: 100%;
+
+    li {
+      @extend .clearfix;
+
+      padding: 15px 15px 0 15px;
+
+      i {
+        display: none;
+      }
+
+      .message-content {
+        border-radius: 5px;
+        max-width: 300px;
+        padding: 10px;
+        width: 100%;
+      }
+
+      li:first-child {
+        padding-top: 15px;
+      }
+
+      li:last-child {
+        padding-bottom: 15px;
+      }
+
+      &:hover {
+
+        i {
+          display: inline-block;
+        }
+      }
+    }
+
+    li.message-right {
+
+      i {
+        float: right;
+        margin: 10px 10px 0px 0px;
+      }
+
+      .message-content {
+        background-color: #31A3FA;
+        color: #FFF;
+        float: right;
+      }
+    }
+
+    li.message-left {
+
+      i {
+        float: left;
+        margin: 10px 0 0 10px;
+      }
+
+      .message-content {
+        background-color: #E6E5EA;
+        float: left;
+      }
+    }
   }
+
+  .messages-content {
+    border-top: 1px solid #DDD;
+    bottom: 0;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+
+    input {
+      border: 0;
+      width: 100%;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+.create-conversation, .create-conversation-start {
+
+  .create-conversation-header {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .create-conversation-body {
+    padding: 0 25px 25px 25px;
+    text-align: center;
+
+    input {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+  }
+
+  .create-conversation-controls {
+    bottom: 0;
+    text-align: right;
+    padding: 25px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.create-conversation {
+
 }
 
 /*

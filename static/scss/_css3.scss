@@ -1,0 +1,62 @@
+@mixin rotate($angle) {
+  -webkit-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+  -o-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+  transform: rotate($angle);
+}
+
+@mixin box-shadow($settings) {
+  box-shadow: $settings;
+  -moz-box-shadow: $settings;
+  -webkit-box-shadow: $settings;
+}
+
+@mixin text-shadow($settings: 1px 1px white) {
+  text-shadow: $settings;
+  -moz-text-shadow: $settings;
+  -webkit-text-shadow: $settings;
+}
+
+@mixin appearance($setting) {
+  -moz-appearance: $setting;
+  -webkit-appearance: $setting;
+}
+
+@mixin gradient($from, $to) {
+  background: $from;
+  background: -webkit-linear-gradient($from, $to);
+  background: -o-linear-gradient($from, $to);
+  background: -moz-linear-gradient($from, $to);
+  background: linear-gradient($from, $to);
+}
+
+@mixin transition($property: all, $time: .5s) {
+  // transition times
+  transition-duration: $time;
+  -o-transition-duration: $time;
+  -ms-transition-duration: $time;
+  -moz-transition-duration: $time;
+  -webkit-transition-duration: $time;
+  // transition properties
+  transition-property: $property;
+  -o-transition-property: $property;
+  -ms-transition-property: $property;
+  -moz-transition-property: $property;
+  -webkit-transition-property: $property;
+  // transition function
+  transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -ms-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+@mixin border-radius($radius: 3px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}

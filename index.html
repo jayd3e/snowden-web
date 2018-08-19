@@ -2,6 +2,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" media="all" href="/css/screen.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	</head>
 
 	<body>
@@ -43,18 +44,97 @@
 		</section>
 
 		<section class="messages page">
-			<div class="conversations-header">
+			<div class="messages-header">
 				<h2>Messages</h2>
 			</div>
 
 			<ol class="messages-list">
-				<li></li>
+				<li class="message message-right">
+					<div class="message-content">Here is a sender message</div>
+					<i class="fas fa-ellipsis-h"></i>
+				</li>
+				<li class="message message-left">
+					<div class="message-content">Here is a recipient message</div>
+					<i class="fas fa-ellipsis-h"></i>
+				</li>
 			</ol>
+
+			<div class="messages-content">
+				<input type="text" name="message_content" />
+			</div>
+		</section>
+
+		<section class="create-conversation page">
+			<header class="create-conversation-header">
+				<h2>Create Conversation</h2>
+			</header>
+
+			<div class="create-conversation-body">
+				<p>You are creating a conversation.</p>
+				<input class="input" type="text" placeholder="Name of conversation" />
+			</div>
+
+			<div class="create-conversation-controls">
+				<button class="button button-success js-close">Next</button>
+			</div>
+		</section>
+
+		<section class="create-conversation-start page">
+			<header class="create-conversation-header">
+				<h2>Choose Starting Distribution</h2>
+			</header>
+
+			<div class="create-conversation-body">
+				<p>You are creating a conversation.</p>
+				<div class="range-slider">
+					<input class="range-slider-range" type="range" value="100" min="0" max="100">
+					<span class="range-slider-value">0</span>
+				</div>
+			</div>
+
+			<div class="create-conversation-controls">
+				<button class="button button-success js-close">Next</button>
+			</div>
+		</section>
+
+		<section class="create-conversation-start page">
+			<header class="create-conversation-header">
+				<h2>Choose Completing Distribution</h2>
+			</header>
+
+			<div class="create-conversation-body">
+				<p>You are creating a conversation.</p>
+				<div class="range-slider">
+					<input class="range-slider-range" type="range" value="100" min="0" max="100">
+					<span class="range-slider-value">0</span>
+				</div>
+			</div>
+
+			<div class="create-conversation-controls">
+				<button class="button button-success js-close">Next</button>
+			</div>
+		</section>
+
+		<section class="create-conversation-start page">
+			<header class="create-conversation-header">
+				<h2>Choose Expiration Time</h2>
+			</header>
+
+			<div class="create-conversation-body">
+				<p>You are creating a conversation.</p>
+			</div>
+
+			<div class="create-conversation-controls">
+				<button class="button button-success js-close">Create</button>
+			</div>
 		</section>
 	</body>
 
 	<script src="/js/libs/jquery.js"></script>
 	<script src="/js/libs/underscore.js"></script>
 	<script src="/js/libs/backbone.js"></script>
+	<script src="/js/libs/tether.js"></script>
+	<script src="/js/libs/drop.js"></script>
+	<script src="/js/libs/vex.js"></script>
 	<script src="/js/main.js"></script>
 </html>
