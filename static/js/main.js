@@ -239,7 +239,9 @@ $(function () {
 	var sliderEls = $('.range-slider');
 
 	sliderEls.each(function(){
-		$(this).children('.range-slider-range').on('input', function(){
+
+		$(this).children('.range-slider-range').on('input', function(event){
+			event.preventDefault();
 			var value = $(this).parent('.range-slider').children('.range-slider-value');
 			value.html(this.value + "%");
 		});
