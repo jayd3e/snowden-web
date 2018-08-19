@@ -13,31 +13,22 @@
   li {
     display: block;
 
-    &.brokerage-header-price a {
+    a {
       color: $dark_grey;
-      font-weight: 600;
+      font-size: 18px;
       text-align: center;
 
       &:hover {
         color: $dark_grey;
-        font-weight: 600;
       }
-    }
-
-    .icon-qrcode {
-      margin-right: 5px;
-      vertical-align: middle;
-    }
-
-    &.on-mobile {
-      display: none;
     }
 
     a {
       border-bottom: 1px solid $border_grey;
       display: block;
-      font-size: 1.5rem;
+      font-size: 18px;
       padding: 10px 15px;
+      text-decoration: none;
 
       &:hover {
         background: $bg_grey;

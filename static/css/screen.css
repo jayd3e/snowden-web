@@ -584,23 +584,18 @@ input::-moz-focus-outer {
   min-width: 125px; }
   .menu li {
     display: block; }
-    .menu li.brokerage-header-price a {
+    .menu li a {
       color: #403E41;
-      font-weight: 600;
+      font-size: 18px;
       text-align: center; }
-      .menu li.brokerage-header-price a:hover {
-        color: #403E41;
-        font-weight: 600; }
-    .menu li .icon-qrcode {
-      margin-right: 5px;
-      vertical-align: middle; }
-    .menu li.on-mobile {
-      display: none; }
+      .menu li a:hover {
+        color: #403E41; }
     .menu li a {
       border-bottom: 1px solid #E1E4E8;
       display: block;
-      font-size: 1.5rem;
-      padding: 10px 15px; }
+      font-size: 18px;
+      padding: 10px 15px;
+      text-decoration: none; }
       .menu li a:hover {
         background: #FAFBFC;
         color: #1898f9;

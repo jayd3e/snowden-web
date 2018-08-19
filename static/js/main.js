@@ -95,7 +95,9 @@ $(function () {
 			this.messagesContentInputEl.val("");
 			
 
-			var messageEl = this.messagesListEl.first();
+			this.messageEls = this.messagesListEl.children('li');
+
+			var messageEl = this.messageEls.first();
 			var messageMenuIconEl = messageEl.find('.js-message-menu-icon');
 			var messageMenuEl = messageEl.find('.js-message-menu');
 			var dropEl = Drop({
@@ -111,6 +113,12 @@ $(function () {
 					"orientation": "left"
 				}));
 			}, this), 1000);
+
+			$('body').delegate('.js-message-menu li', 'click', function() {
+				messageEl.find('.message-content').css('background-color', '#D83949');
+				dropEl.close();
+				return false;
+			});
 		},
 		back: function() {
 			router.navigate("#conversations", {trigger: true});
