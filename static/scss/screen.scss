@@ -36,8 +36,24 @@ $disabled_blue: #7B95B0;
 .conversations {
 
   .conversations-header {
+    @extend .clearfix;
+
     border-bottom: 1px solid #DDD;
     padding: 25px;
+
+    h2 {
+      float: left;
+    }
+
+    i {
+      float: right;
+      font-size: 30px;
+
+      &:hover {
+        color: $accent;
+        cursor: pointer;
+      }
+    }
   }
 
 	.conversations-list {
@@ -51,18 +67,13 @@ $disabled_blue: #7B95B0;
       width: 100%;
 
       .conversation-profile-pic {
-        border: 1px solid #DDD;
-        border-radius: 50%;
         float: left;
         height: 52px;
-        position: relative;
         width: 52px;
 
         img {
-          border-radius: 50%;
           height: 50px;
           width: 50px;
-          vertical-align: middle;
         }
       }
 
@@ -77,16 +88,77 @@ $disabled_blue: #7B95B0;
 
         }
       }
+
+      &:hover {
+        background-color: #EEE;
+        cursor: pointer;
+      }
 		}
 	}
 }
 
 .messages {
-	// display: none;
+	display: none;
 
   .messages-header {
     border-bottom: 1px solid #DDD;
     padding: 25px;
+  }
+
+  .messages-banner-container {
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 30px;
+    text-align: center;
+
+    .messages-banner {
+      @extend .clearfix;
+
+      margin: 0 auto;
+      max-width: 400px;
+
+      > i {
+        font-size: 50px;
+        margin: 50px 0;
+      }
+
+      .messages-banner-participants {
+        @extend .clearfix;
+
+        list-style-type: none;
+
+        li {
+          float: left;
+          text-align: center;
+          width: 50%;
+
+          .avatar {
+            display: inline-block;
+            height: 75px;
+            margin-right: 15px;
+            width: 75px;
+
+            img {
+              height: 75px;
+              width: 75px;
+            }
+          }
+
+          .messages-banner-participant-amount {
+
+            span {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .messages-banner-expiration {
+        color: $light_grey;
+        margin-top: 30px;
+      }
+    }
   }
 
   .messages-list {
@@ -154,8 +226,12 @@ $disabled_blue: #7B95B0;
   }
 
   .messages-content {
+    @extend .clearfix;
+
+    background-color: #FFF;
     border-top: 1px solid #DDD;
     bottom: 0;
+    font-size: 18px;
     padding: 15px;
     position: fixed;
     width: 100%;
@@ -168,10 +244,17 @@ $disabled_blue: #7B95B0;
         outline: 0;
       }
     }
+
+    .messages-send {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
   }
 }
 
-.create-conversation, .create-conversation-start {
+.create-conversation, .create-conversation-start, .create-conversation-complete, .create-conversation-expiration, .confirm-conversation  {
+  display: none;
 
   .create-conversation-header {
     padding: 25px;
@@ -198,12 +281,32 @@ $disabled_blue: #7B95B0;
     padding: 25px;
     position: absolute;
     width: 100%;
+
+    button {
+      margin-left: 15px;
+    }
   }
 }
 
 .create-conversation {
 
 }
+
+.avatar {
+  border: 1px solid #DDD;
+  border-radius: 50%;
+  height: 52px;
+  position: relative;
+  width: 52px;
+
+  img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+  }
+}
+
 
 /*
  *  Clearfix for modern browsers(IE 8+)

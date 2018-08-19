@@ -526,6 +526,14 @@ select:disabled {
 .conversations .conversations-header {
   border-bottom: 1px solid #DDD;
   padding: 25px; }
+  .conversations .conversations-header h2 {
+    float: left; }
+  .conversations .conversations-header i {
+    float: right;
+    font-size: 30px; }
+    .conversations .conversations-header i:hover {
+      color: #31A3FA;
+      cursor: pointer; }
 .conversations .conversations-list {
   list-style-type: none; }
   .conversations .conversations-list li {
@@ -533,97 +541,154 @@ select:disabled {
     padding: 25px 15px;
     width: 100%; }
     .conversations .conversations-list li .conversation-profile-pic {
-      border: 1px solid #DDD;
-      border-radius: 50%;
       float: left;
       height: 52px;
-      position: relative;
       width: 52px; }
       .conversations .conversations-list li .conversation-profile-pic img {
-        border-radius: 50%;
         height: 50px;
-        width: 50px;
-        vertical-align: middle; }
+        width: 50px; }
     .conversations .conversations-list li .conversation-content {
       padding-left: 80px; }
       .conversations .conversations-list li .conversation-content h3 {
         margin-bottom: 5px; }
+    .conversations .conversations-list li:hover {
+      background-color: #EEE;
+      cursor: pointer; }
 
-.messages .messages-header {
-  border-bottom: 1px solid #DDD;
-  padding: 25px; }
-.messages .messages-list {
-  list-style-type: none;
-  width: 100%; }
-  .messages .messages-list li {
-    padding: 15px 15px 0 15px; }
-    .messages .messages-list li i {
-      display: none; }
-    .messages .messages-list li .message-content {
-      border-radius: 5px;
-      max-width: 300px;
-      padding: 10px;
+.messages {
+  display: none; }
+  .messages .messages-header {
+    border-bottom: 1px solid #DDD;
+    padding: 25px; }
+  .messages .messages-banner-container {
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 30px;
+    text-align: center; }
+    .messages .messages-banner-container .messages-banner {
+      margin: 0 auto;
+      max-width: 400px; }
+      .messages .messages-banner-container .messages-banner > i {
+        font-size: 50px;
+        margin: 50px 0; }
+      .messages .messages-banner-container .messages-banner .messages-banner-participants {
+        list-style-type: none; }
+        .messages .messages-banner-container .messages-banner .messages-banner-participants li {
+          float: left;
+          text-align: center;
+          width: 50%; }
+          .messages .messages-banner-container .messages-banner .messages-banner-participants li .avatar {
+            display: inline-block;
+            height: 75px;
+            margin-right: 15px;
+            width: 75px; }
+            .messages .messages-banner-container .messages-banner .messages-banner-participants li .avatar img {
+              height: 75px;
+              width: 75px; }
+          .messages .messages-banner-container .messages-banner .messages-banner-participants li .messages-banner-participant-amount span {
+            display: block; }
+      .messages .messages-banner-container .messages-banner .messages-banner-expiration {
+        color: #B1B1B1;
+        margin-top: 30px; }
+  .messages .messages-list {
+    list-style-type: none;
+    width: 100%; }
+    .messages .messages-list li {
+      padding: 15px 15px 0 15px; }
+      .messages .messages-list li i {
+        display: none; }
+      .messages .messages-list li .message-content {
+        border-radius: 5px;
+        max-width: 300px;
+        padding: 10px;
+        width: 100%; }
+      .messages .messages-list li li:first-child {
+        padding-top: 15px; }
+      .messages .messages-list li li:last-child {
+        padding-bottom: 15px; }
+      .messages .messages-list li:hover i {
+        display: inline-block; }
+    .messages .messages-list li.message-right i {
+      float: right;
+      margin: 10px 10px 0px 0px; }
+    .messages .messages-list li.message-right .message-content {
+      background-color: #31A3FA;
+      color: #FFF;
+      float: right; }
+    .messages .messages-list li.message-left i {
+      float: left;
+      margin: 10px 0 0 10px; }
+    .messages .messages-list li.message-left .message-content {
+      background-color: #E6E5EA;
+      float: left; }
+  .messages .messages-content {
+    background-color: #FFF;
+    border-top: 1px solid #DDD;
+    bottom: 0;
+    font-size: 18px;
+    padding: 15px;
+    position: fixed;
+    width: 100%; }
+    .messages .messages-content input {
+      border: 0;
       width: 100%; }
-    .messages .messages-list li li:first-child {
-      padding-top: 15px; }
-    .messages .messages-list li li:last-child {
-      padding-bottom: 15px; }
-    .messages .messages-list li:hover i {
-      display: inline-block; }
-  .messages .messages-list li.message-right i {
-    float: right;
-    margin: 10px 10px 0px 0px; }
-  .messages .messages-list li.message-right .message-content {
-    background-color: #31A3FA;
-    color: #FFF;
-    float: right; }
-  .messages .messages-list li.message-left i {
-    float: left;
-    margin: 10px 0 0 10px; }
-  .messages .messages-list li.message-left .message-content {
-    background-color: #E6E5EA;
-    float: left; }
-.messages .messages-content {
-  border-top: 1px solid #DDD;
-  bottom: 0;
-  padding: 15px;
-  position: fixed;
-  width: 100%; }
-  .messages .messages-content input {
-    border: 0;
-    width: 100%; }
-    .messages .messages-content input:focus {
-      outline: 0; }
+      .messages .messages-content input:focus {
+        outline: 0; }
+    .messages .messages-content .messages-send {
+      position: absolute;
+      top: 15px;
+      right: 15px; }
 
-.create-conversation .create-conversation-header, .create-conversation-start .create-conversation-header {
-  padding: 25px;
-  text-align: center; }
-.create-conversation .create-conversation-body, .create-conversation-start .create-conversation-body {
-  padding: 0 25px 25px 25px;
-  text-align: center; }
-  .create-conversation .create-conversation-body input, .create-conversation-start .create-conversation-body input {
-    max-width: 500px;
+.create-conversation, .create-conversation-start, .create-conversation-complete, .create-conversation-expiration, .confirm-conversation {
+  display: none; }
+  .create-conversation .create-conversation-header, .create-conversation-start .create-conversation-header, .create-conversation-complete .create-conversation-header, .create-conversation-expiration .create-conversation-header, .confirm-conversation .create-conversation-header {
+    padding: 25px;
+    text-align: center; }
+  .create-conversation .create-conversation-body, .create-conversation-start .create-conversation-body, .create-conversation-complete .create-conversation-body, .create-conversation-expiration .create-conversation-body, .confirm-conversation .create-conversation-body {
+    padding: 0 25px 25px 25px;
+    text-align: center; }
+    .create-conversation .create-conversation-body input, .create-conversation-start .create-conversation-body input, .create-conversation-complete .create-conversation-body input, .create-conversation-expiration .create-conversation-body input, .confirm-conversation .create-conversation-body input {
+      max-width: 500px;
+      width: 100%; }
+    .create-conversation .create-conversation-body p, .create-conversation-start .create-conversation-body p, .create-conversation-complete .create-conversation-body p, .create-conversation-expiration .create-conversation-body p, .confirm-conversation .create-conversation-body p {
+      margin-bottom: 25px; }
+  .create-conversation .create-conversation-controls, .create-conversation-start .create-conversation-controls, .create-conversation-complete .create-conversation-controls, .create-conversation-expiration .create-conversation-controls, .confirm-conversation .create-conversation-controls {
+    bottom: 0;
+    text-align: right;
+    padding: 25px;
+    position: absolute;
     width: 100%; }
-  .create-conversation .create-conversation-body p, .create-conversation-start .create-conversation-body p {
-    margin-bottom: 25px; }
-.create-conversation .create-conversation-controls, .create-conversation-start .create-conversation-controls {
-  bottom: 0;
-  text-align: right;
-  padding: 25px;
-  position: absolute;
-  width: 100%; }
+    .create-conversation .create-conversation-controls button, .create-conversation-start .create-conversation-controls button, .create-conversation-complete .create-conversation-controls button, .create-conversation-expiration .create-conversation-controls button, .confirm-conversation .create-conversation-controls button {
+      margin-left: 15px; }
+
+.avatar {
+  border: 1px solid #DDD;
+  border-radius: 50%;
+  height: 52px;
+  position: relative;
+  width: 52px; }
+  .avatar img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle; }
 
 /*
  *  Clearfix for modern browsers(IE 8+)
  */
-.clearfix:before, .conversations .conversations-list li:before, .messages .messages-list li:before,
+.clearfix:before, .conversations .conversations-header:before, .conversations .conversations-list li:before, .messages .messages-banner-container .messages-banner:before, .messages .messages-banner-container .messages-banner .messages-banner-participants:before, .messages .messages-list li:before, .messages .messages-content:before,
 .clearfix:after,
+.conversations .conversations-header:after,
 .conversations .conversations-list li:after,
-.messages .messages-list li:after {
+.messages .messages-banner-container .messages-banner:after,
+.messages .messages-banner-container .messages-banner .messages-banner-participants:after,
+.messages .messages-list li:after,
+.messages .messages-content:after {
   content: "";
   display: table; }
 
-.clearfix:after, .conversations .conversations-list li:after, .messages .messages-list li:after {
+.clearfix:after, .conversations .conversations-header:after, .conversations .conversations-list li:after, .messages .messages-banner-container .messages-banner:after, .messages .messages-banner-container .messages-banner .messages-banner-participants:after, .messages .messages-list li:after, .messages .messages-content:after {
   clear: both; }
 
 /*# sourceMappingURL=screen.css.map */

@@ -6,80 +6,87 @@
 	</head>
 
 	<body>
-		<section class="conversations page">
+		<section class="conversations js-conversations page">
 			<div class="conversations-header">
 				<h2>Conversations</h2>
+				<i class="fas fa-plus-square js-create-conversation-button"></i>
 			</div>
 
-			<ol class="conversations-list">
-				<li>
-					<div class="conversation-profile-pic"><img src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
-					<div class="conversation-content">
-						<h3>Government Secrets</h3>
-						<p>This is the last message in the thread.</p>
-					</div>
-				</li>
-				<li>
-					<div class="conversation-profile-pic"><img src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
-					<div class="conversation-content">
-						<h3>Government Secrets</h3>
-						<p>This is the last message in the thread.</p>
-					</div>
-				</li>
-				<li>
-					<div class="conversation-profile-pic"><img src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
-					<div class="conversation-content">
-						<h3>Government Secrets</h3>
-						<p>This is the last message in the thread.</p>
-					</div>
-				</li>
-				<li>
-					<div class="conversation-profile-pic"><img src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
-					<div class="conversation-content">
-						<h3>Government Secrets</h3>
-						<p>This is the last message in the thread.</p>
-					</div>
-				</li>
-			</ol>
+			<ol class="conversations-list js-conversations-list"></ol>
 		</section>
 
-		<section class="messages page">
+		<section class="messages js-messages page">
 			<div class="messages-header">
 				<h2>Messages</h2>
 			</div>
 
-			<ol class="messages-list">
-				<li class="message message-right">
-					<div class="message-content">Here is a sender message</div>
-					<i class="fas fa-ellipsis-h"></i>
-				</li>
-				<li class="message message-left">
-					<div class="message-content">Here is a recipient message</div>
-					<i class="fas fa-ellipsis-h"></i>
-				</li>
-			</ol>
+			<div class="messages-banner-container">
+			<div class="messages-banner">
+				<ol class="messages-banner-participants">
+					<li>
+						<div class="avatar"><img class="messages-banner-left avatar" src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
+						<div class="messages-banner-participant-amount">
+							<span>Amount</span>
+							<span>30%</span>
+							<span>$300</span>
+						</div>
+					</li>
+					<li>
+						<div class="avatar"><img class="messages-banner-right avatar" src="https://pbs.twimg.com/profile_images/916858330957586432/r6I9BMGg_400x400.jpg" /></div>
+						<div class="messages-banner-participant-amount">
+							<span>Amount</span>
+							<span>70%</span>
+							<span>$700</span>
+						</div>
+					</li>
+				</ol>
+				<i class="fas fa-long-arrow-alt-down"></i>
+				<ol class="messages-banner-participants">
+					<li>
+						<div class="avatar"><img class="messages-banner-left avatar" src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
+						<div class="messages-banner-participant-amount">
+							<span>Amount</span>
+							<span>70%</span>
+							<span>$700</span>
+						</div>
+					</li>
+					<li>
+						<div class="avatar"><img class="messages-banner-right avatar" src="https://pbs.twimg.com/profile_images/916858330957586432/r6I9BMGg_400x400.jpg" /></div>
+						<div class="messages-banner-participant-amount">
+							<span>Amount</span>
+							<span>30%</span>
+							<span>$300</span>
+						</div>
+					</li>
+				</ol>
+
+				<p class="messages-banner-expiration">Expires on July 2nd, 2019</p>
+			</div>
+			</div>
+			<ol class="messages-list js-messages-list"></ol>
 
 			<div class="messages-content">
 				<input type="text" name="message_content" />
+				<i class="fas fa-paper-plane messages-send"></i>
 			</div>
 		</section>
 
-		<section class="create-conversation page">
+		<section class="create-conversation js-create-conversation page">
 			<header class="create-conversation-header">
 				<h2>Create Conversation</h2>
 			</header>
 
 			<div class="create-conversation-body">
 				<p>You are creating a conversation.</p>
-				<input class="input" type="text" placeholder="Name of conversation" />
+				<input class="input js-conversation-name" type="text" placeholder="Name of conversation" />
 			</div>
 
 			<div class="create-conversation-controls">
-				<button class="button button-success js-close">Next</button>
+				<button class="button button-success js-submit">Next</button>
 			</div>
 		</section>
 
-		<section class="create-conversation-start page">
+		<section class="create-conversation-start js-create-conversation-start page">
 			<header class="create-conversation-header">
 				<h2>Choose Starting Distribution</h2>
 			</header>
@@ -93,11 +100,11 @@
 			</div>
 
 			<div class="create-conversation-controls">
-				<button class="button button-success js-close">Next</button>
+				<button class="button button-success js-submit">Next</button>
 			</div>
 		</section>
 
-		<section class="create-conversation-start page">
+		<section class="create-conversation-complete js-create-conversation-complete page">
 			<header class="create-conversation-header">
 				<h2>Choose Completing Distribution</h2>
 			</header>
@@ -111,11 +118,11 @@
 			</div>
 
 			<div class="create-conversation-controls">
-				<button class="button button-success js-close">Next</button>
+				<button class="button button-success js-submit">Next</button>
 			</div>
 		</section>
 
-		<section class="create-conversation-start page">
+		<section class="create-conversation-expiration js-create-conversation-expiration page">
 			<header class="create-conversation-header">
 				<h2>Choose Expiration Time</h2>
 			</header>
@@ -125,10 +132,42 @@
 			</div>
 
 			<div class="create-conversation-controls">
-				<button class="button button-success js-close">Create</button>
+				<button class="button button-success js-submit">Create</button>
+			</div>
+		</section>
+
+		<section class="confirm-conversation page">
+			<header class="create-conversation-header">
+				<h2>Confirm Conversation</h2>
+			</header>
+
+			<div class="create-conversation-body">
+				<p>You are confirming a conversation.</p>
+			</div>
+
+			<div class="create-conversation-controls">
+				<button class="button js-close">Cancel</button>
+				<button class="button button-success js-close">Confirm</button>
 			</div>
 		</section>
 	</body>
+
+	<script id="conversation-template" type="text/x-mustache-template">
+		<li>
+			<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
+			<div class="conversation-content">
+				<h3>Government Secrets</h3>
+				<p>This is the last message in the thread.</p>
+			</div>
+		</li>
+	</script>
+
+	<script id="message-template" type="text/x-mustache-template">
+		<li class="message message-right">
+			<div class="message-content"><%= content %></div>
+			<i class="fas fa-ellipsis-h"></i>
+		</li>
+	</script>
 
 	<script src="/js/libs/jquery.js"></script>
 	<script src="/js/libs/underscore.js"></script>
