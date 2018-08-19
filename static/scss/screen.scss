@@ -135,16 +135,20 @@ body {
     padding: 30px;
     text-align: center;
 
-    .messages-banner {
-      @extend .clearfix;
-
-      margin: 0 auto;
-      max-width: 400px;
+    .messages-banner-participants-33, .messages-banner-participants-default {
+      display: none;
 
       > i {
         font-size: 50px;
         margin: 50px 0;
       }
+    }
+
+    .messages-banner {
+      @extend .clearfix;
+
+      margin: 0 auto;
+      max-width: 400px;
 
       .messages-banner-participants {
         @extend .clearfix;

@@ -640,12 +640,14 @@ body {
     margin: 15px;
     padding: 30px;
     text-align: center; }
+    .messages .messages-banner-container .messages-banner-participants-33, .messages .messages-banner-container .messages-banner-participants-default {
+      display: none; }
+      .messages .messages-banner-container .messages-banner-participants-33 > i, .messages .messages-banner-container .messages-banner-participants-default > i {
+        font-size: 50px;
+        margin: 50px 0; }
     .messages .messages-banner-container .messages-banner {
       margin: 0 auto;
       max-width: 400px; }
-      .messages .messages-banner-container .messages-banner > i {
-        font-size: 50px;
-        margin: 50px 0; }
       .messages .messages-banner-container .messages-banner .messages-banner-participants {
         list-style-type: none; }
         .messages .messages-banner-container .messages-banner .messages-banner-participants li {

@@ -65,10 +65,15 @@ $(function () {
 			/* Elements */
 			this.messageEls = this.messagesListEl.children('li');
 
-			if (options.id == "33") {
+			this.$el.find('.messages-list-33, .messages-list-default').hide();
+			this.$el.find('.messages-banner-participants-33, .messages-banner-participants-default').hide();
+
+			if (options.id === "33") {
 				this.$el.find('.messages-list-33').show();
+				this.$el.find('.messages-banner-participants-33').show();
 			} else {
 				this.$el.find('.messages-list-default').show();
+				this.$el.find('.messages-banner-participants-default').show();
 			}
 
 			this.$el.show();
