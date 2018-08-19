@@ -86,14 +86,13 @@ $(function () {
 			SnowdenApp.postMessage(
 				"0xaefc93cf58b368455ba610cf24485ff98caac517db2bf12b3d558dfab6db39f3",   // from toshi to 00fb
 				web3.sha3("The NSA is spying on American citizens")
-			   )		  
+			   )
 
 			this.messagesListEl.append(template({
 				"content": this.messagesContentInputEl.val(),
 				"orientation": "right"
 			}))
 			this.messagesContentInputEl.val("");
-			
 
 			this.messageEls = this.messagesListEl.children('li');
 
