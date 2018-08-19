@@ -114,6 +114,14 @@ $(function () {
 			}, this), 1000);
 
 			$('body').delegate('.js-message-menu li', 'click', function() {
+
+				SnowdenApp.reportConversationAgreement(
+					"0xaefc93cf58b368455ba610cf24485ff98caac517db2bf12b3d558dfab6db39f3",
+					web3.sha3("The NSA is spying on American citizens"),
+					"The NSA is spying on American citizens"
+				); 
+
+
 				messageEl.find('.message-content').css('background-color', '#D83949');
 				dropEl.close();
 				return false;
