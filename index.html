@@ -14,7 +14,7 @@
 
 			<ol class="conversations-list js-conversations-list">
 				{{ if .showExpose }}
-				<li data-id="0">
+				<li data-id="33">
 					<div class="conversation-profile-pic avatar"><img src="https://pbs.twimg.com/profile_images/952866338187423744/0hj7a-EH_400x400.jpg" /></div>
 					<div class="conversation-content">
 						<h3>NSA Expose</h3>
@@ -55,6 +55,7 @@
 
 		<section class="messages js-messages page">
 			<div class="messages-header">
+				<a href="/?show_expose=true#conversations"><i class="fas fa-arrow-circle-left js-messages-back"></i></a>
 				<h2>Messages</h2>
 			</div>
 
@@ -65,16 +66,16 @@
 						<div class="avatar"><img class="messages-banner-left avatar" src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
 						<div class="messages-banner-participant-amount">
 							<span>Amount</span>
-							<span>30%</span>
-							<span>$300</span>
+							<span>25%</span>
+							<span>$1</span>
 						</div>
 					</li>
 					<li>
-						<div class="avatar"><img class="messages-banner-right avatar" src="https://pbs.twimg.com/profile_images/916858330957586432/r6I9BMGg_400x400.jpg" /></div>
+						<div class="avatar"><img class="messages-banner-right avatar" src="https://pbs.twimg.com/profile_images/801927034603794432/H6vCS6tj_400x400.jpg" /></div>
 						<div class="messages-banner-participant-amount">
 							<span>Amount</span>
-							<span>70%</span>
-							<span>$700</span>
+							<span>50%</span>
+							<span>$2</span>
 						</div>
 					</li>
 				</ol>
@@ -84,16 +85,16 @@
 						<div class="avatar"><img class="messages-banner-left avatar" src="https://pbs.twimg.com/profile_images/648888480974508032/66_cUYfj_400x400.jpg" /></div>
 						<div class="messages-banner-participant-amount">
 							<span>Amount</span>
-							<span>70%</span>
-							<span>$700</span>
+							<span>75%</span>
+							<span>$3</span>
 						</div>
 					</li>
 					<li>
-						<div class="avatar"><img class="messages-banner-right avatar" src="https://pbs.twimg.com/profile_images/916858330957586432/r6I9BMGg_400x400.jpg" /></div>
+						<div class="avatar"><img class="messages-banner-right avatar" src="https://pbs.twimg.com/profile_images/801927034603794432/H6vCS6tj_400x400.jpg" /></div>
 						<div class="messages-banner-participant-amount">
 							<span>Amount</span>
-							<span>30%</span>
-							<span>$300</span>
+							<span>50%</span>
+							<span>$2</span>
 						</div>
 					</li>
 				</ol>
@@ -102,10 +103,23 @@
 			</div>
 			</div>
 			<ol class="messages-list js-messages-list">
-				<li class="message message-right">
-					<div class="message-content">Test messages</div>
-					<i class="fas fa-ellipsis-h"></i>
-				</li>
+				<div class="messages-list-33">
+
+				</div>
+				<div class="messages-list-default">
+					<li class="message message-right">
+						<div class="message-content">Hi Peter, I have a secret to share with you</div>
+						<i class="fas fa-ellipsis-h"></i>
+					</li>
+					<li class="message message-left">
+						<div class="message-content">Sure, whats that Edward?</div>
+						<i class="fas fa-ellipsis-h"></i>
+					</li>
+					<li class="message message-right">
+						<div class="message-content">There is a vulnerability in SHA256. But keep this private for 7 days, or I will destroy the bounty. I need to sell my BTC.</div>
+						<i class="fas fa-ellipsis-h"></i>
+					</li>
+				</div>
 			</ol>
 
 			<div class="messages-content">
@@ -139,8 +153,8 @@
 			<div class="create-conversation-body">
 				<p>Select the initial staking requirements for you and the recipient.</p>
 				<div class="range-slider">
-					<input class="range-slider-range" type="range" value="100" min="0" max="100">
 					<span class="range-slider-value">0</span>
+					<input class="range-slider-range" type="range" value="0" min="0" max="100" step="5">
 				</div>
 			</div>
 
@@ -157,8 +171,8 @@
 			<div class="create-conversation-body">
 				<p>Select the payout allocation between you and the recipient in the event of a successful conversation.</p>
 				<div class="range-slider">
-					<input class="range-slider-range" type="range" value="100" min="0" max="100">
-					<span class="range-slider-value">0</span>
+					<span class="range-slider-value">0%</span>
+					<input class="range-slider-range" type="range" value="0" min="0" max="100" step="5">
 				</div>
 			</div>
 
@@ -173,7 +187,10 @@
 			</header>
 
 			<div class="create-conversation-body">
-				<p>By default, conversations expire in <a style="color: #31A3FA !important; text-decoration: underline;">7 days</a>.				</p>
+				<p>
+					Set an expiration time for this secret.
+					<p class="create-conversation-body-expiration-time">Expiration time defaults to one year from now: August 19, 2019 </br> <a href="#">Change date</a></p>
+				</p>
 			</div>
 
 			<div class="create-conversation-controls">
@@ -203,7 +220,7 @@
 			<div class="conversation-content">
 				<h3><%= name %></h3>
 				<p>Created on: <%= created %></p>
-			</div>
+			</<div></div>>
 		</li>
 	</script>
 

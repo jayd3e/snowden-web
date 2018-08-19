@@ -53,75 +53,33 @@ $(function () {
 
 	var ConversationView = Backbone.View.extend({
 		initialize: function(options) {
-			_.bindAll(this, 'initialLoad', 'submit');
+			_.bindAll(this, 'submit');
 
 			/* Elements */
 			this.messageTemplateEl = $("#message-template");
 			this.messagesListEl = this.$el.find('.js-messages-list');
 			this.messagesContentInputEl = this.$el.find('.js-messages-content-input');
 			this.submitEl = this.$el.find('.js-submit');
-
-			this.$el.show();
-
-			$.ajax({
-				url: baseUrl + "/index.php?type=conversations&id=" + options.id,
-				contentType: "application/json",
-				dataType: "json",
-				success: this.initialLoad
-			});
-
-			this.submitEl.click(this.submit);
-		},
-		initialLoad: function(response) {
-			this.model = new ConversationModel(response[0]);
-
-			this.messagesListEl.empty();
-			_.each(response[0].messages, function(message) {
-				this.messageTemplate = _.template(this.messageTemplateEl.html());
-				this.messagesListEl.append(this.messageTemplate(message));
-			}, this);
+			this.backEl = this.$el.find('.js-messages-back');
 
 			/* Elements */
 			this.messageEls = this.messagesListEl.children('li');
 
-			/* Events */
-			this.messageEls.click(this.clickMessage);
+			if (options.id == "33") {
+				this.$el.find('.messages-list-33').show();
+			} else {
+				this.$el.find('.messages-list-default').show();
+			}
 
-			/* PubNub */
-			pubnub.addListener({
-				status: function(statusEvent) {
-					console.log(statusEvent.category);
-				},
-				message: _.bind(function(msg) {
-					$.ajax({
-						url: baseUrl + "/index.php?type=conversations&id=" + this.model.id,
-						contentType: "application/json",
-						dataType: "json",
-						success: this.initialLoad
-					});
-				}, this),
-				presence: function() {
+			this.$el.show();
 
-				}
-			})
-			pubnub.subscribe({
-				channels: ['conversations:' + this.model.id]
-			});
+			this.submitEl.click(this.submit);
 		},
 		submit: function() {
-			$.ajax({
-				method: "POST",
-				url: baseUrl + "/index.php?type=messages",
-				contentType: "application/json",
-				dataType: "json",
-				data: JSON.stringify({
-					"content": this.messagesContentInputEl.val(),
-					"user_id": "1",
-					"conversation_id": this.model.id
-				})
-			});
 
-			return false;
+		},
+		back: function() {
+			router.navigate("#conversations", {trigger: true});
 		}
 	});
 
@@ -184,7 +142,7 @@ $(function () {
 
 	var ExpirationConversationView = Backbone.View.extend({
 		initialize: function() {
-			_.bindAll(this, 'submit', 'submitSuccess');
+			_.bindAll(this, 'submit');
 
 			/* Elements */
 			this.submitEl = this.$el.find('.js-submit');
@@ -194,16 +152,6 @@ $(function () {
 			this.submitEl.click(this.submit);
 		},
 		submit: function() {
-			$.ajax({
-				method: "POST",
-				url: baseUrl + "/index.php?type=conversations",
-				contentType: "application/json",
-				dataType: "json",
-				data: JSON.stringify(this.model.toJSON()),
-				success: this.submitSuccess
-			});
-		},
-		submitSuccess: function() {
 			SnowdenApp.proposeConversationAgreement(
 				"0x00Fb52101bbcF2e88a66fDf35d08A9f235e5D4Ca",
 				web3.toBigNumber(1000000000000000000),
@@ -213,7 +161,7 @@ $(function () {
 				9420882
 			);
 
-			router.navigate("conversations", {trigger: true});
+			router.navigate("conversation/33", {trigger: true});
 
 			this.$el.hide();
 		}
@@ -281,6 +229,15 @@ $(function () {
 	// Start history when our application is ready
 	Backbone.history.start({
 			root: '/'
+	});
+
+	var sliderEls = $('.range-slider');
+
+	sliderEls.each(function(){
+		$(this).children('.range-slider-range').on('input', function(){
+			var value = $(this).parent('.range-slider').children('.range-slider-value');
+			value.html(this.value + "%");
+		});
 	});
 
 })

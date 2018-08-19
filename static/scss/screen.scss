@@ -25,6 +25,7 @@ $disabled_blue: #7B95B0;
 @import "css3";
 @import "button";
 @import "input";
+@import "range_slider";
 
 html {
   height: 100%;
@@ -114,6 +115,17 @@ body {
   .messages-header {
     border-bottom: 1px solid #DDD;
     padding: 25px;
+
+    i {
+      color: #000;
+      float: left;
+      font-size: 24px;
+      margin-right: 25px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   .messages-banner-container {
@@ -177,6 +189,10 @@ body {
     margin-bottom: 75px;
     width: 100%;
 
+    .messages-list-33, .messages-list-default {
+      display: none;
+    }
+
     li {
       @extend .clearfix;
 
@@ -188,6 +204,7 @@ body {
 
       .message-content {
         border-radius: 5px;
+        line-height: 18px;
         max-width: 300px;
         padding: 10px;
         width: 100%;
@@ -286,6 +303,11 @@ body {
 
     p {
       margin-bottom: 25px;
+    }
+
+    .create-conversation-body-expiration-time {
+      color: $light_grey;
+      line-height: 25px;
     }
   }
 
